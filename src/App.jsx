@@ -42,25 +42,15 @@ function App() {
     })
   }
 
-  // // Funzione per gestire la ricerca
-  // const handleSearch = () => {
-  //   if (searchType === "movie") {
-  //     getMovies();
-  //   } else {
-  //     getSeries();
-  //   }
-  // };
-
   const handleSearch = () => {
-    getMovies();     // Esegui la ricerca per i film
-    getSeries();     // Esegui la ricerca per le serie
+    getMovies();     
+    getSeries();    
   };
 
   return (
     <>
       {/* <GlobalContext value = {globalProviderValue}> */}
       <div className='boolfix'>
-        <h2>BoolFix</h2>
         <Header
           searchTitle={searchTitle}
           setSearchTitle={setSearchTitle}

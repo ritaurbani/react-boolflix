@@ -2,7 +2,7 @@ function Header({ searchTitle, setSearchTitle, getMovies, setSearchType, handleS
 
     return (
         <header>
-            <div className="logo">Logo</div>
+            <div className="title">BOOLFIX</div>
             <div className="searchBar">
                 <input
                     placeholder='search'
