@@ -10,15 +10,15 @@ function MovieCard({ movie }) {
             <div>
                 <h4>{movie.title}</h4>
             </div>
-            <div className="lang">
-                <img src={`/img/en.jpg`} alt="" />
+            <div className="language-flag">
+                <img src={`/img/${movie.original_language}.png`} alt="" />
                 <span>{movie.original_language}</span>
             </div>
             <div>
                 {movie.vote_average}
             </div>
             <div>
-                {movie.overview.slice(0,30)+"..."}
+                {movie.overview.slice(0,50)+"..."}
             </div>
         </div>
     )

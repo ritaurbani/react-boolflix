@@ -11,6 +11,7 @@ function App() {
 
   //creo stato per ricerca movies and title
   const [movies, setMovies] = useState([])
+  const [series, setSeries] = useState([])
   const [searchTitle, setSearchTitle] = useState("")
 
   // const globalProviderValue = {movies,setMovies,searchTitle,setSearchTitle } 
@@ -44,8 +45,8 @@ function App() {
         />
         {/* controllo */}
         {movies.length > 0 ? (
-          <div className='container mt-5'>
-            <div className='row row-cols-4'>
+          <div className='container'>
+            <div className='row'>
               {movies.map((movie) => (
                 <div key={movie.id} className='col'>
                   <MovieCard
