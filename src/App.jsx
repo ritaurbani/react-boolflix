@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import MovieCard from './components/MovieCard';
+import Header from './components/Header';
+import GlobalContext from './context/GlobalContext';
 
 const apiKey = "60b41ff0f572ed7fbac58d938e4544c2";
 const apiUrl = "https://api.themoviedb.org/3";
@@ -10,6 +12,8 @@ function App() {
   //creo stato per ricerca movies and title
   const [movies, setMovies] = useState([])
   const [searchTitle, setSearchTitle] = useState("")
+
+  // const globalProviderValue = {movies,setMovies,searchTitle,setSearchTitle } 
 
   //chiamata axios
   const getMovies = () => {
@@ -30,29 +34,28 @@ function App() {
 
   return (
     <>
-      <div className='App'>
-        <h2>BoollFix</h2>
-        <header className='d-flex justify-content-between'>
-          <div>Logo</div>
-          <div>
-            <input 
-            placeholder='search' 
-            type="text"
-            value={searchTitle}
-            onChange={(e) => setSearchTitle(event.target.value)} /> 
-            <button className='mx-2' onClick={getMovies}>Search</button>
-          </div>
-         
-        </header>
-
-        <div className='container'>
-          {movies.map((movie) => (
-            <MovieCard
-            key={movie.id}
-            movie={movie} />
-          ))}
-        </div>
+      {/* <GlobalContext value = {globalProviderValue}> */}
+      <div className='boolfix'>
+        <h2>BoolFix</h2>
+        <Header
+          searchTitle={searchTitle}
+          setSearchTitle={setSearchTitle}
+          getMovies={getMovies}
+        />
+        {/* controllo */}
+        {movies.length > 0 ? (
+          <div className='container mt-5'>
+            <div className='row row-cols-4'>
+              {movies.map((movie) => (
+                <div key={movie.id} className='col'>
+                  <MovieCard
+                    movie={movie} />
+                </div>
+              ))}
+            </div>
+          </div>) : (<p>Movie not found</p>)}
       </div>
+      {/* </GlobalContext> */}
     </>
   )
 }
