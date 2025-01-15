@@ -20,7 +20,8 @@ function Card({ content }) {
                     <h4>{content.title || content.name}</h4>
 
                     <div className="language-flag">
-                        <span>{content.original_language}<img src={`/img/${content.original_language}.png`} alt="" /></span>
+                        {/* immagine della bandiera venga mostrata solo se esiste un'immagine per quella lingua, */}
+                        <span>{content.original_language}<img src={content.original_language ? `/img/${content.original_language}.png` : "/img/placeholder.png"} alt="" /></span>
 
                     </div>
                     <div>
