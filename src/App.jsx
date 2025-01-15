@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useContext } from 'react'
 import axios from 'axios'
 import Card from './components/Card';
 import Header from './components/Header';
@@ -13,7 +13,6 @@ function App() {
   const [movies, setMovies] = useState([])
   const [series, setSeries] = useState([])
   const [searchTitle, setSearchTitle] = useState("")
-  // const [searchType, setSearchType] = useState("movie"); // "movie" o "tv"
 
   // const globalProviderValue = {movies,setMovies,searchTitle,setSearchTitle } 
 
@@ -42,6 +41,7 @@ function App() {
     })
   }
 
+  //controlla qui
   const handleSearch = () => {
     getMovies();     
     getSeries();    
@@ -55,12 +55,12 @@ function App() {
           searchTitle={searchTitle}
           setSearchTitle={setSearchTitle}
           getMovies={getMovies}
-          // setSearchType={setSearchType}
           handleSearch={handleSearch}
         />
         {/* controllo */}
         {movies.length > 0 ? (
           <div className='container'>
+            <h3>Movies</h3>
             <div className='row'>
               {movies.map((movie) => (
                 <div key={movie.id} className='col'>
@@ -74,6 +74,7 @@ function App() {
 
         {series.length > 0 ? (
           <div className="container">
+            <h3>TV Series</h3>
             <div className="row">
               {series.map((serie) => (
                 <div key={serie.id} className="col">

@@ -1,4 +1,4 @@
-function Header({ searchTitle, setSearchTitle, getMovies, setSearchType, handleSearch }) {
+function Header({ searchTitle, setSearchTitle, handleSearch }) {
 
     return (
         <header>
@@ -10,11 +10,6 @@ function Header({ searchTitle, setSearchTitle, getMovies, setSearchType, handleS
                     value={searchTitle}
                     onChange={(e) => setSearchTitle(event.target.value)} />
                 <div>
-                    {/* Aggiungi un dropdown o dei pulsanti per scegliere il tipo di ricerca */}
-                    {/* <select onChange={(e) => setSearchType(e.target.value)}>
-                        <option value="movie">Movies</option>
-                        <option value="tv">TV Shows</option>
-                    </select> */}
                     <button className="mx-2" onClick={handleSearch}>Search</button>
                 </div>
                 {/* <button className='mx-2' onClick={getMovies}>Search</button> */}
