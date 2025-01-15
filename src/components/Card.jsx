@@ -13,7 +13,7 @@ function Card({ content }) {
 
             <div className="card-poster">
                 {/* //stringa */}
-                <img src={content.poster_path ? `${posterUrlPrefix}/${content.poster_path}` : "https://picsum.photos/400/300"} alt={content.title} />
+                <img src={content.poster_path ? `${posterUrlPrefix}/${content.poster_path}` : "https://picsum.photos/400/600"} alt={content.title} />
 
                 <div className="card-content">
                     {/* //primo valore true */}
@@ -27,7 +27,7 @@ function Card({ content }) {
                         <span className=''>{Math.ceil(content.vote_average / 2)}
                             {
                                 numbers.map((num, index) => (
-                                    <i className={(Math.ceil(content.vote_average / 2) > index) ? "fa-solid fa-star" : "fa-regular fa-star"}></i>
+                                    <i className={(Math.ceil(content.vote_average / 2) > index) ? "fa-solid fa-star yellow" : "fa-solid fa-star white"}></i>
                                 ))
                             }
                         </span>

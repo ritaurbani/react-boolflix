@@ -18,6 +18,7 @@ body {
 
 img {
     width: 100%;
+    min-height: 100%;
 }
 
 .language-flag img{
@@ -76,14 +77,16 @@ button {
 
 .card-poster {
     width: 100%;
-    height: auto;
+    height: 100%;
+    border: solid ;
     position: relative;
 }
 
 .card-poster img {
     display: block;
     width: 100%;
-    height: auto; 
+    min-height: 100%;
+    
 }
 
 .card-content {
@@ -104,4 +107,10 @@ button {
     display: block;
 }
 
+.yellow {
+    color: yellow;
+}
 
+.white {
+    color: white;
+}
