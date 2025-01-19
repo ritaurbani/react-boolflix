@@ -3,10 +3,6 @@ function Card({ content }) {
 
     const numbers = [1, 2, 3, 4, 5];
 
-    const stars = []
-    const getStars = () => {
-
-    }
 
     return (
         <div className="card">
